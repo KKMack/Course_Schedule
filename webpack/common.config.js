@@ -4,7 +4,7 @@ const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 module.exports = {
 
   entry: {
-    'app': [
+    'home': [
       './src/bootstrap.js'
     ],
     'vendor': './src/vendor.js'
@@ -49,7 +49,7 @@ module.exports = {
 
   plugins: [
     new CommonsChunkPlugin({
-      name: ['app', 'vendor'],
+      name: ['home', 'vendor'],
       minChunks: Infinity
     })
   ]
