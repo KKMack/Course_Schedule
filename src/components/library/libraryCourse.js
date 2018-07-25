@@ -12,12 +12,12 @@ class LibraryCourse extends Component {
         super(props)
 
         this.state = {
-            status: false
+            status: true
         }
     }
 
     renderDescription = function() {
-        if(this.state.status) {
+        if(!this.state.status) {
             return (
                 <div className="library-course__description">
                     <label>Course Description</label>
@@ -30,12 +30,17 @@ class LibraryCourse extends Component {
     }.bind(this);
 
     handleCallback = function(status) {
+        if(!status) {
+            document.getElementById('library-course').classList.add('library-couse-selected')
+        } else {
+            document.getElementById('library-course').classList.remove('library-couse-selected')
+        }
         this.setState({ status })
     }.bind(this)
 
     render() {
         return (
-            <div className="library-course">
+            <div id="library-course" className="library-course">
                 <div className='library-course__title-check'>
                     <label className="library-couse__title">{ this.props.title }</label>
                     { Icon("fas fa-check", 'library-course__icon') }
