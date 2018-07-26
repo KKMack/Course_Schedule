@@ -15,4 +15,5 @@
     grid-template-columns: [library-s] 1fr 1fr [schedule-s] 50px [library-e] 1fr [schedule-e];
     grid-template-rows: 1fr;
 
+    overflow: hidden;
 }

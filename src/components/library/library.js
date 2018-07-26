@@ -22,17 +22,18 @@ class Library extends Component {
         console.log(this.props.courses);
         return (
             <div className="library">
-                <h1 className="library__title">Course Library</h1>
-                <LibraryCourse/>
-                <LibraryCourse/>
-                <LibraryCourse/>
+                <div className="library__container">
+                    <h1 className="library__container__title">Course Library</h1>
+                    {this.renderCourses() }
             </div>
         )
     }
 }
 
 function mapStateToProps(state) {
-    return state.courses
+    return {
+        courses: state.courses
+    }
 }
 
 export default connect(mapStateToProps, actions)(Library);
